@@ -19,6 +19,7 @@ class Letter {
 
   guess(guess) {
     if (this.char == guess) {
+      this.visible = true;
       return true;
     }
     return false;
