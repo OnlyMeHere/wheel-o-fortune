@@ -28,6 +28,24 @@ class Word {
     }
     return true;
   }
+
+  toString() {
+    // Overriding toString() to return the word with only visible letters showing
+    let wordToShow = '';
+    for (let i in this.letters) {
+        wordToShow += this.letters[i].toString();
+    }
+    return wordToShow;
+  }
+
+  getSolution() {
+    // Calling getSolution() on each letter to reveal the entire word
+    let solution = '';
+    for (let i in this.letters) {
+        solution += this.letters[i].getSolution();
+    }
+    return solution;
+  }
 }
 
 module.exports = Word;
