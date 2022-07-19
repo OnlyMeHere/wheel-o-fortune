@@ -3,29 +3,29 @@ class Letter {
     const letterList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const digitList = '1234567890';
 
-    this.letter = letter;
+    this.char = letter;
     this.visible = false;
-    if (letterList.indexOf(this.letter) == -1 && digitList.indexOf(this.letter) == -1) {
+    if (letterList.indexOf(this.char) == -1 && digitList.indexOf(this.char) == -1) {
       this.visible = true;
     }
   }
 
   toString() {
     if (this.visible) {
-        return this.letter;
+        return this.char;
     }
     return '_';
   }
 
   guess(guess) {
-    if (this.letter == guess) {
+    if (this.char == guess) {
       return true;
     }
     return false;
   }
 
   getSolution() {
-    return this.letter;
+    return this.char;
   }
 }
 
