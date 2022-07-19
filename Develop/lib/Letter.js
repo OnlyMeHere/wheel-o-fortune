@@ -4,16 +4,9 @@ class Letter {
     const digitList = '1234567890';
 
     this.letter = letter;
-    this.visible = true;
-    for (let x in letterList) {
-      if (letterList[x] == this.letter) {
-        this.visible = false;
-      }
-    }
-    for (let x in digitList) {
-      if (letterList[x] == this.letter) {
-        this.visible = false;
-      }
+    this.visible = false;
+    if (letterList.indexOf(this.letter) == -1 && digitList.indexOf(this.letter) == -1) {
+      this.visible = true;
     }
   }
 
