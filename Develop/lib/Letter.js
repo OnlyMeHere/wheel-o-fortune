@@ -3,29 +3,35 @@ class Letter {
     const letterList = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const digitList = '1234567890';
 
-    this.letter = letter;
+    this.char = letter;
+    // Visible indicated whether the letter should be visible
+    // Letters that have been guessed will be visible
+    // Letters that are not in letterList or digitList are automatically visible
     this.visible = false;
-    if (letterList.indexOf(this.letter) == -1 && digitList.indexOf(this.letter) == -1) {
+    if (letterList.indexOf(this.char) == -1 && digitList.indexOf(this.char) == -1) {
       this.visible = true;
     }
   }
 
   toString() {
+    // Overriding toString() to return the letter only if it is visible 
     if (this.visible) {
-        return this.letter;
+        return this.char;
     }
     return '_';
   }
 
   guess(guess) {
-    if (this.letter == guess) {
+    // If the user's guess is correct, makes the letter visible and returns true
+    if (this.char == guess) {
+      this.visible = true;
       return true;
     }
     return false;
   }
 
   getSolution() {
-    return this.letter;
+    return this.char;
   }
 }
 
