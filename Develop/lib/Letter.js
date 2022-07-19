@@ -23,7 +23,7 @@ class Letter {
 
   guess(guess) {
     // If the user's guess is correct, makes the letter visible and returns true
-    if (this.char == guess) {
+    if (this.char.toLowerCase() == guess.toLowerCase()) { // Setting both to lowercase to make guesses case insensitive
       this.visible = true;
       return true;
     }
