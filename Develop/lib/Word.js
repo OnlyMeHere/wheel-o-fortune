@@ -11,12 +11,13 @@ class Word {
 
   guessLetter(input) {
     // Returning true or false based on whether the user guessed the correct letter
+    let isCorrect = false; // Need to use a boolean variable to account for duplicate letters in a word
     for (let i in this.letters) {
         if (this.letters[i].guess(input)) {
-            return true;
+            isCorrect = true;
         }
     }
-    return false;
+    return isCorrect;
   }
 
   guessedCorrectly() {
