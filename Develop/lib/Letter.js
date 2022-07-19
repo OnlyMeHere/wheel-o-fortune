@@ -4,23 +4,31 @@ class Letter {
     const digitList = '1234567890';
 
     this.letter = letter;
-    if (letterList.search(letter) == -1 && digitList.search(letter) == -1) {
-        this.visible = true;
-    } else {
+    this.visible = true;
+    for (let x in letterList) {
+      if (letterList[x] == this.letter) {
         this.visible = false;
+      }
+    }
+    for (let x in digitList) {
+      if (letterList[x] == this.letter) {
+        this.visible = false;
+      }
     }
   }
 
   toString() {
     if (this.visible) {
         return this.letter;
-    } else {
-        return '_';
     }
+    return '_';
   }
 
-  guess() {
-    
+  guess(guess) {
+    if (this.letter == guess) {
+      return true;
+    }
+    return false;
   }
 
   getSolution() {
